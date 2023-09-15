@@ -10,7 +10,7 @@ export async function signup(req: Request, res: Response) {
     const { name, phoneNo } = req.body;
     
 
-    const phoneExist: typeof User | null = await User.findOne({ phoneNo });
+    const phoneExist  = await User.findOne({ phoneNo });
 
     if (phoneExist) {
       return res.status(400).json({ message: "Phone number already exists" });

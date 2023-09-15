@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.userRoutes = void 0;
 const express_1 = __importDefault(require("express"));
 const signup_js_1 = require("../controllers/signup.js");
+const verify_js_1 = require("../controllers/verify.js");
 exports.userRoutes = express_1.default.Router();
 exports.userRoutes.use(express_1.default.json());
 exports.userRoutes.post('/signup', signup_js_1.signup);
+exports.userRoutes.post("/verify", verify_js_1.verify);
